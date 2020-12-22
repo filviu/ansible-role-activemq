@@ -19,7 +19,7 @@ Including an example of how to use your role (for instance, with variables passe
 
       roles:
         - silviuvulcan.activemq
-              activemq_version: 5.14.5
+              activemq_version: 5.15.13
               activemq_install_path: /opt
               activemq_user: activemq
               activemq_group: activemq
