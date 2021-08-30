@@ -14,7 +14,7 @@
     remote_src: true
     owner: "{{ activemq_user }}"
     group: "{{ activemq_group }}"
-    creates: "{{ activemq_install_path }}/apache-activemq-{{ activemq_version }}"
+    creates: "{{ activemq_install_path }}/apache-activemq-{{ activemq_version }}/bin"
 
 - name: Fix parent folder permissions
   file:

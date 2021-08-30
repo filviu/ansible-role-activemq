@@ -9,6 +9,14 @@
     msg: "{{ activemq_install_path }}/apache-activemq-{{ activemq_version }} already exists and will not be overwritten"
   when: is_installed.stat.exists and not activemq_force_install
 
+- name: setup | create system user if necesary
+  ansible.builtin.user:
+    name: "{{ activemq_user }}"
+    home: "{{ activemq_install_path }}/apache-activemq-{{ activemq_version }}"
+    create_home: no
+    system: yes
+    state: present
+
 - name: Install apachemq {{ activemq_version }}
   import_tasks: install.yml
   when: not is_installed.stat.exists or activemq_force_install
