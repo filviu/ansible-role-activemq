@@ -1,37 +1,56 @@
-Role Name
-=========
+# Ansible Role: Apache ActiveMQ
 
 Sets up Apache ActiveMQ from binary tgz.
 
-Role Variables
---------------
+## Requirements
 
-Check defaults/main for variables that can be adjusted. Especially user,
-path and version,
+None.
 
-Example Playbook
-----------------
+## Role Variables
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Interesting variables are listed below, along with default values (see `defaults/main.yml` for a full list):
 
-    ---
-    - hosts: all
+    activemq_version: 5.15.13
 
-      roles:
-        - silviuvulcan.activemq
-              activemq_version: 5.15.13
-              activemq_install_path: /opt
-              activemq_user: activemq
-              activemq_group: activemq
-              activemq_config_template: activemq.xml.j2
+The version you wish to install. It also impacts the installation path.
 
-License
--------
+    activemq_install_path: /opt
 
-(BSD, MIT)
+Path under which to install activemq. It will be `/SOME_PATH/apache-activemq-x.yy.z`
+
+    activemq_user: apachemq
+    activemq_group: apachemq
+
+User and group under which to setup files and start activemq.
+
+    activemq_force_install: false
+
+Unless this is true the role will not overwrite if the path already exists.
+
+## Dependencies
+
+None.
+
+## Example Playbook
+
+```yaml
+---
+- hosts: all
+
+roles:
+      - silviuvulcan.activemq
+      activemq_version: 5.15.13
+      activemq_install_path: /opt
+      activemq_user: activemq
+      activemq_group: activemq
+      activemq_config_template: activemq.xml.j2
+```
+
+## License
+
+MIT / BSD
 
 
-Author Information
-------------------
+## Author Information
 
-https://github.com/silviuvulcan/ansible-role-activemq/
+This role was created by Silviu Vulcan to scratch his own itch.
