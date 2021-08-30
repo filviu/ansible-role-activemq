@@ -12,3 +12,5 @@ activemq_group: apachemq
 activemq_config_template: activemq.xml.j2
 
 activemq_force_install: false
+
+activemq_start_service: true

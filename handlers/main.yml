@@ -1,0 +1,10 @@
+---
+
+- name: restart activemq
+  shell: nohup ./activemq restart </dev/null >/dev/null 2>&1 &
+  args:
+    chdir: "{{ activemq_install_path }}/apache-activemq-{{ activemq_version }}/bin/"
+    executable: /bin/bash
+  become: true
+  become_user: "{{ activemq_user }}"
+  when: activemq_start_service
