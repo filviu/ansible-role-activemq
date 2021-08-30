@@ -1,5 +1,7 @@
 # Ansible Role: Apache ActiveMQ
 
+[![CI](https://github.com/silviuvulcan/ansible-role-activemq/workflows/CI/badge.svg?event=push)](https://github.com/silviuvulcan/ansible-role-activemq/actions?query=workflow%3ACI)
+
 Sets up Apache ActiveMQ from binary tgz.
 
 ## Requirements
