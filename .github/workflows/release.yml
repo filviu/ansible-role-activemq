@@ -13,7 +13,7 @@ name: Release
 
 defaults:
   run:
-    working-directory: 'silviuvulcan/ansible-role-activemq'
+    working-directory: 'silviuvulcan.activemq'
 
 jobs:
 
@@ -24,7 +24,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'silviuvulcan/ansible-role-activemq'
+          path: 'silviuvulcan.activemq'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
