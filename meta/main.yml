@@ -29,7 +29,7 @@ galaxy_info:
     - apache
     - broker
     - jms
-    - AMQP
-    - MQTT
+    - amqp
+    - mqtt
 
 dependencies: []
