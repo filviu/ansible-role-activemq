@@ -39,8 +39,8 @@ None.
 ---
 - hosts: all
 
-roles:
-      - silviuvulcan.activemq
+  roles:
+    - silviuvulcan.activemq
       activemq_version: 5.15.13
       activemq_install_path: /opt
       activemq_user: activemq
