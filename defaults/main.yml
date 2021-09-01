@@ -5,7 +5,6 @@ activemq_version: 5.15.13
 # installs in apache-activemq-x.yy.z under this path
 activemq_install_path: /opt
 
-# user needs to exist
 activemq_user: apachemq
 activemq_group: apachemq
 
