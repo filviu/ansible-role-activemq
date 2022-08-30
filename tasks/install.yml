@@ -3,7 +3,7 @@
   ansible.builtin.file:
     path: "{{ activemq_install_path }}"
     owner: "{{ activemq_user }}"
-    ansible.builtin.group: "{{ activemq_group }}"
+    group: "{{ activemq_group }}"
     mode: 0755
     state: directory
 
@@ -13,14 +13,14 @@
     dest: "{{ activemq_install_path }}"
     remote_src: true
     owner: "{{ activemq_user }}"
-    ansible.builtin.group: "{{ activemq_group }}"
+    group: "{{ activemq_group }}"
     creates: "{{ activemq_install_path }}/apache-activemq-{{ activemq_version }}/bin"
 
 - name: Fix parent folder permissions
   ansible.builtin.file:
     path: "{{ activemq_install_path }}/apache-activemq-{{ activemq_version }}"
     owner: "{{ activemq_user }}"
-    ansible.builtin.group: "{{ activemq_group }}"
+    group: "{{ activemq_group }}"
     recurse: yes
 
 - name: Deploy configuration file
@@ -28,5 +28,5 @@
     src: activemq.xml.j2
     dest: "{{ activemq_install_path }}/apache-activemq-{{ activemq_version }}/conf/activemq.xml"
     owner: "{{ activemq_user }}"
-    ansible.builtin.group: "{{ activemq_group }}"
+    group: "{{ activemq_group }}"
     mode: 0644
