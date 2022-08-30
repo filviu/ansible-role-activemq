@@ -1,16 +1,16 @@
 ---
 - name: Check if apachemq is already installed
-  stat:
+  ansible.builtin.stat:
     path: "{{ activemq_install_path }}/apache-activemq-{{ activemq_version }}"
   register: is_installed
 
 - name: Give up if installation already exists and not forced
-  debug:
+  ansible.builtin.debug:
     msg: "{{ activemq_install_path }}/apache-activemq-{{ activemq_version }} already exists and will not be overwritten"
   when: is_installed.stat.exists and not activemq_force_install
 
 - name: env | determine if {{ activemq_user }} exists
-  getent:
+  ansible.builtin.getent:
     database: passwd
     key: "{{ activemq_user }}"
     fail_key: false
@@ -25,6 +25,6 @@
   when: getent_passwd[activemq_user] == none
 
 - name: Install apachemq {{ activemq_version }}
-  import_tasks: install.yml
+  ansible.builtin.import_tasks: install.yml
   when: not is_installed.stat.exists or activemq_force_install
   notify: restart activemq
