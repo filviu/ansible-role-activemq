@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: activemq
-  author: silviuvulcan
+  author: filviu
   description: Setup Apache ActiveMQ from binary tgz
 
   license: "license (BSD, MIT)"
